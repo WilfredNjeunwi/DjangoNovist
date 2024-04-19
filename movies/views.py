@@ -2,11 +2,14 @@ from django.shortcuts import render, HttpResponse
 
 # Create your views here.
 def index(request):
-    return HttpResponse("Hello World")
+    context = {
+        'movies': ['Scopion', 'Arrow', 'Black Panter', 'Terry Cruise']
+        }
+    return render(request, "movies/index.html", context)
 
 def about(request):
     """Create an about page"""
-    return HttpResponse("I am just learning this work")
+    return render(request, "movies/about.html", {})
 
 def hello(request, first_name):
     return HttpResponse(f"Hello {first_name}")
