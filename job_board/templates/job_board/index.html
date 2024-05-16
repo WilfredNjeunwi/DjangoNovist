@@ -1,0 +1,9 @@
+{% load humanize%}
+
+<html>
+    <ul>
+        {% for postings in job_postings %}
+            <li>{{postings.title}} | {{postings.description}} | ${{postings.salary}}</li>
+        {% endfor %}
+    </ul>
+</html>
