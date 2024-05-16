@@ -1,9 +1,9 @@
-{% load humanize%}
+{% load humanize %}
 
 <html>
     <ul>
         {% for postings in job_postings %}
-            <li>{{postings.title}} | {{postings.description}} | ${{postings.salary}}</li>
+            <li>{{postings.title|title }} | {{postings.description}} | ${{postings.salary|intcomma}}</li>
         {% endfor %}
     </ul>
 </html>
