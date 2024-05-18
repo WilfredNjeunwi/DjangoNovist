@@ -8,3 +8,5 @@ class JobPosting(models.Model):
     salary = models.IntegerField()
     is_active = models.BooleanField(default=False)
 
+
+

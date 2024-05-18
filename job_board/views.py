@@ -1,5 +1,7 @@
 from django.shortcuts import render, get_object_or_404
+from django.http.response import JsonResponse
 from .models import JobPosting
+
 
 # Create your views here.
 def index(response):
@@ -7,7 +9,7 @@ def index(response):
     context = {
         "job_postings": active_postings,
     }
-    return render(response, 'job_board/index.html', context)
+    return JsonResponse(context)
 
 def job_detail(response, pk):
     # job_posting = JobPosting.objects.get(id=pk)
