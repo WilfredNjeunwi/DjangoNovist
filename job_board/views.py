@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from django.http.response import JsonResponse
+from django.http.response import JsonResponse, HttpResponse
 from .models import JobPosting
 
 
@@ -9,7 +9,7 @@ def index(response):
     context = {
         "job_postings": active_postings,
     }
-    return JsonResponse(context)
+    return HttpResponse(context)
 
 def job_detail(response, pk):
     # job_posting = JobPosting.objects.get(id=pk)
